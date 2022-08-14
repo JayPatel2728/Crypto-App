@@ -9,8 +9,23 @@
     border-radius: 8px;
 }
 
+.chart-buttons{
+    max-width: 740px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
 .rank {
     margin: .5 0;
+}
+
+.btn{
+    font-size: 14px;
+    font-weight: 600;
+    height:25px;
+    padding: 0px 20px;
 }
 
 .rank-btn {
@@ -85,7 +100,7 @@ th {
 }
 
 .chart{
-    max-height: 400px;
+    max-height: 350px;
     max-width: 750px;
 }
 
@@ -94,6 +109,11 @@ th {
         max-width: 100%;
         margin: .5rem;
         padding: 0 .5rem;
+    }
+
+    .chart-buttons{
+        max-width: 100%;
+        margin: .5rem;
     }
 
     .stats {
