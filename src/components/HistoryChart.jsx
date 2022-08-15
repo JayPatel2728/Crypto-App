@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
+import { chartOptions } from "../chartConfig/chartOptions";
 import "chartjs-adapter-moment";
 
 function HistoryChart({ chartData }) {
   const chartRef = useRef();
-  const { day, week, year, data } = chartData;
+  const { day, week, month, year, max, data } = chartData;
   const [timeFormat, setTimeFormat] = useState("24h");
 
   const determineTimeFormat = () => {
@@ -13,8 +14,12 @@ function HistoryChart({ chartData }) {
         return day;
       case "7d":
         return week;
+      case "30d":
+        return month;
       case "1y":
         return year;
+      case "max":
+        return max;
       default:
         return day;
     }
@@ -34,30 +39,10 @@ function HistoryChart({ chartData }) {
               pointRadius: 0.1,
               fill: "start",
             },
-          ]
+          ],
         },
         options: {
-          plugins: {
-            legend: {
-                display: false
-            },
-          },
-          lineHeightAnnotation: {
-            always: true,
-            hover: false,
-            lineWeight: 1.5,
-          },
-          animation: {
-            duration: 2000,
-          },
-          maintainAspectRatio: false,
-          responsive: true,
-          scales: {
-            x: {
-              type: "time",
-              
-            },
-          },
+          ...chartOptions,
         },
       });
 
@@ -76,8 +61,14 @@ function HistoryChart({ chartData }) {
         <button onClick={() => setTimeFormat("7d")} className="btn btn7">
           7D
         </button>
+        <button onClick={() => setTimeFormat("30d")} className="btn btn7">
+          1M
+        </button>
         <button onClick={() => setTimeFormat("1y")} className="btn btn1">
           1Y
+        </button>
+        <button onClick={() => setTimeFormat("max")} className="btn btn7">
+          ALL
         </button>
       </div>
       <div className="chart-container">

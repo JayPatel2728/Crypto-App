@@ -20,7 +20,7 @@ function Coin() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const [day, week, year, coinData] = await Promise.all([
+      const [day, week, month, year, max, coinData] = await Promise.all([
         coinGecko.get(`/coins/${params.coinId}/market_chart/`, {
           params: {
             vs_currency: "usd",
@@ -34,10 +34,22 @@ function Coin() {
           },
         }),
         coinGecko.get(`/coins/${params.coinId}/market_chart/`, {
+            params: {
+              vs_currency: "usd",
+              days: "30",
+            },
+          }),
+        coinGecko.get(`/coins/${params.coinId}/market_chart/`, {
           params: {
             vs_currency: "usd",
             days: "365",
           },
+        }),
+        coinGecko.get(`/coins/${params.coinId}/market_chart/`, {
+            params: {
+              vs_currency: "usd",
+              days: "max",
+            },
         }),
         coinGecko.get(`/coins/${params.coinId}`),
       ]);
@@ -45,7 +57,9 @@ function Coin() {
       setCoin({
         day: formatData(day.data.prices),
         week: formatData(week.data.prices),
+        month: formatData(month.data.prices),
         year: formatData(year.data.prices),
+        max: formatData(max.data.prices),
         data: coinData.data,
       });
     };
@@ -57,9 +71,6 @@ function Coin() {
     return (
       <div>
         <div className="coin-container">
-          <div className="content">
-            <h1>{coin.data?.name}</h1>
-          </div>
           <div className="content">
             <div className="rank">
               <span className="rank-btn">

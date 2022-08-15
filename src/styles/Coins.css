@@ -1,5 +1,5 @@
 .container {
-    max-width: 1140px;
+    max-width: 1400px;
     margin: auto;
 }
 
@@ -7,11 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #26272b;
-    box-shadow: 0px 0px 12px #18191b;
-    border-radius: 8px;
-    margin: 2rem 1rem;
-    padding: .7rem 1rem;
+    padding: .7rem 2rem;
     font-weight: 700;
 }
 
@@ -19,20 +15,64 @@
     margin-left: -4rem;
 }
 
+.coin_input {
+    background: #222531;
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    outline: none;
+    height: 100%;
+    width: 300px;
+    color: #e2e2e2;
+}
+
+.coin_input::placeholder {
+    color: #e2e2e2;
+}
+
+form{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+
+.arrow-icon{
+    padding-top: 4px;
+}
+
+.pos{
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    color: rgb(17, 180, 17);
+    justify-content: right;
+}
+
+.neg{
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    color: rgb(211, 26, 26);
+    justify-content: right;
+}
+
+.add-width{
+    width:140px;
+}
+
 .coin-row {
     display: flex;
-    justify-content: space-between;
+    text-align: right;
     align-items: center;
-    background-color: #26272b;
-    box-shadow: 0px 0px 12px #18191b;
-    border-radius: 8px;
-    margin: 2rem 1rem;
-    padding: .7rem 1rem;
+    justify-content: space-between;
+    border-bottom:2px solid white;
+    margin: 0rem 1rem 0rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .coin-row:hover {
-    transform: scale(1.01);
-    transition: .5s ease-in-out;
+    background: #171718;
     cursor: pointer;
 }
 
@@ -44,13 +84,20 @@ img {
 
 .img-symbol {
     display: flex;
+    justify-content: right;
     align-items: center;
 }
-
-
 
 @media screen and (max-width: 720px) {
     .hide-mobile {
         display: none;
+    }
+
+    .pos{
+        margin-right: 0px;
+    }
+    
+    .neg{
+        margin-right: 0px;
     }
 }
