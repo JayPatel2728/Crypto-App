@@ -1,0 +1,22 @@
+.banner {
+    background-image: url("../../public/banner.jpg");
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-items{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-symbol{
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.trending-slogan{
+    color: darkgray;
+}

@@ -54,6 +54,7 @@ function Coin() {
         coinGecko.get(`/coins/${params.coinId}`),
       ]);
 
+
       setCoin({
         day: formatData(day.data.prices),
         week: formatData(week.data.prices),

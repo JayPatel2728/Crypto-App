@@ -1,0 +1,20 @@
+.carousel{
+    height:250px;
+    display: flex;
+    align-items: center;
+}
+
+.carouselItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carouselItem >img{
+    height: 100px;
+}
+
+.carousel-container{
+    padding-left: 5%;
+    padding-right: 5%;
+}

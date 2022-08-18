@@ -3,6 +3,7 @@ import { useState } from "react";
 import CoinItem from "../components/CoinItem";
 import Coin from "./Coin";
 import { Link } from "react-router-dom";
+import Banner from "../components/Banner/Banner";
 import "../styles/Coins.css";
 
 function Coins(props) {
@@ -24,26 +25,30 @@ function Coins(props) {
     );
   });
 
+
   return (
-    <div className="container">
-      <form>
-        <input
-          className="coin_input"
-          type="text"
-          onChange={handleChange}
-          placeholder="Search"
-        />
-      </form>
-      <div>
-        <div className="heading">
-          <p>#</p>
-          <p className="coin-name">Coin</p>
-          <p>Price</p>
-          <p>24h</p>
-          <p className="hide-mobile">Volume</p>
-          <p className="hide-mobile">Mkt Cap</p>
+    <div>
+      <Banner />
+      <div className="container">
+        <form>
+          <input
+            className="coin_input"
+            type="text"
+            onChange={handleChange}
+            placeholder="Search"
+          />
+        </form>
+        <div>
+          <div className="heading">
+            <p>#</p>
+            <p className="coin-name">Coin</p>
+            <p>Price</p>
+            <p>24h</p>
+            <p className="hide-mobile">Volume</p>
+            <p className="hide-mobile">Mkt Cap</p>
+          </div>
+          {coinMap}
         </div>
-        {coinMap}
       </div>
     </div>
   );
