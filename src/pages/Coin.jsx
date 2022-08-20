@@ -66,7 +66,7 @@ function Coin() {
     };
 
     fetchData();
-  }, []);
+  }, [params.coinId]);
 
   const render = () => {
     const marketPrice1h = coin.data?.market_data.price_change_percentage_1h_in_currency.usd

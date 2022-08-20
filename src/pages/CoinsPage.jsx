@@ -4,7 +4,7 @@ import CoinItem from "../components/CoinItem";
 import Coin from "./Coin";
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Pagination from "@mui/material/Pagination";
 import "../styles/Coins.css";
 
