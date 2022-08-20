@@ -67,7 +67,7 @@ td, th {
 }
 
 th {
-    background-color: #333;
+    background-color: rgb(221, 173, 39);
 }
 
 .stats {
@@ -102,6 +102,14 @@ th {
 .chart{
     max-height: 350px;
     max-width: 750px;
+}
+
+.pos1{
+    color: rgb(17, 180, 17);
+}
+
+.neg1{
+    color: rgb(211, 26, 26);
 }
 
 @media screen and (max-width: 700px) {

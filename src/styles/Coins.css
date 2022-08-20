@@ -5,12 +5,13 @@
 
 .heading {
     display: flex;
-    background-color: rgb(214, 165, 30);
+    background-color: rgb(255, 187, 0);
+    color: black;
     justify-content: space-between;
     align-items: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     font-weight: 700;
     margin: 0rem 1rem 0rem 1rem;
 }
@@ -93,6 +94,8 @@ img {
     justify-content: right;
     align-items: center;
 }
+
+
 
 @media screen and (max-width: 720px) {
     .hide-mobile {

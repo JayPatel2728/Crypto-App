@@ -69,6 +69,12 @@ function Coin() {
   }, []);
 
   const render = () => {
+    const marketPrice1h = coin.data?.market_data.price_change_percentage_1h_in_currency.usd
+    const marketPrice24h = coin.data?.market_data.price_change_percentage_24h_in_currency.usd
+    const marketPrice7d = coin.data?.market_data.price_change_percentage_7d_in_currency.usd
+    const marketPrice14d = coin.data?.market_data.price_change_percentage_14d_in_currency.usd
+    const marketPrice30d = coin.data?.market_data.price_change_percentage_30d_in_currency.usd
+    const marketPrice1y = coin.data?.market_data.price_change_percentage_1y_in_currency.usd
     return (
       <div>
         <div className="coin-container">
@@ -115,10 +121,9 @@ function Coin() {
               <tbody>
                 <tr>
                   <td>
-                    {coin.data?.market_data
-                      ?.price_change_percentage_1h_in_currency ? (
-                      <p>
-                        {coin.data?.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
+                    {marketPrice1h ? (
+                      <p className={marketPrice1h > 0? "pos1" : "neg1"}>
+                        {marketPrice1h.toFixed(
                           1
                         )}
                         %
@@ -126,10 +131,9 @@ function Coin() {
                     ) : null}
                   </td>
                   <td>
-                    {coin.data?.market_data
-                      ?.price_change_percentage_24h_in_currency ? (
-                      <p>
-                        {coin.data?.market_data.price_change_percentage_24h_in_currency.usd.toFixed(
+                    {marketPrice24h ? (
+                      <p className={marketPrice24h > 0? "pos1" : "neg1"}>
+                        {marketPrice24h.toFixed(
                           1
                         )}
                         %
@@ -137,10 +141,9 @@ function Coin() {
                     ) : null}
                   </td>
                   <td>
-                    {coin.data?.market_data
-                      ?.price_change_percentage_24h_in_currency ? (
-                      <p>
-                        {coin.data?.market_data.price_change_percentage_7d_in_currency.usd.toFixed(
+                    {marketPrice7d ? (
+                      <p className={marketPrice7d > 0? "pos1" : "neg1"}>
+                        {marketPrice7d.toFixed(
                           1
                         )}
                         %
@@ -148,10 +151,9 @@ function Coin() {
                     ) : null}
                   </td>
                   <td>
-                    {coin.data?.market_data
-                      ?.price_change_percentage_24h_in_currency ? (
-                      <p>
-                        {coin.data?.market_data.price_change_percentage_14d_in_currency.usd.toFixed(
+                    {marketPrice14d ? (
+                      <p className={marketPrice14d > 0? "pos1" : "neg1"}>
+                        {marketPrice14d.toFixed(
                           1
                         )}
                         %
@@ -159,10 +161,9 @@ function Coin() {
                     ) : null}
                   </td>
                   <td>
-                    {coin.data?.market_data
-                      ?.price_change_percentage_24h_in_currency ? (
-                      <p>
-                        {coin.data?.market_data.price_change_percentage_30d_in_currency.usd.toFixed(
+                    {marketPrice30d ? (
+                      <p className={marketPrice30d > 0? "pos1" : "neg1"}>
+                        {marketPrice30d.toFixed(
                           1
                         )}
                         %
@@ -170,10 +171,9 @@ function Coin() {
                     ) : null}
                   </td>
                   <td>
-                    {coin.data?.market_data
-                      ?.price_change_percentage_24h_in_currency ? (
-                      <p>
-                        {coin.data?.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
+                    {marketPrice1y ? (
+                      <p className={marketPrice1y > 0? "pos1" : "neg1"}>
+                        {marketPrice1y.toFixed(
                           1
                         )}
                         %
